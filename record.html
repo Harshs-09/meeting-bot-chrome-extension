@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Audio Recorder</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f8;
+      color: #333;
+      padding: 40px;
+      max-width: 500px;
+      margin: 0 auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      gap: 10px;
+    }
+
+    button {
+      flex: 1;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #3498db;
+      color: white;
+      transition: background-color 0.2s ease;
+    }
+
+    button:disabled {
+      background-color: #bdc3c7;
+      cursor: not-allowed;
+    }
+
+    button:hover:not(:disabled) {
+      background-color: #2980b9;
+    }
+
+    #status {
+      margin-top: 25px;
+      font-size: 16px;
+      text-align: center;
+      padding: 12px;
+      background-color: #ecf0f1;
+      border-radius: 6px;
+      min-height: 24px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>🎙️ Audio Recorder</h2>
+  <label for="email">📧 Email:</label>
+  <input type="email" id="email" placeholder="you@example.com" required
+    style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc;" />
+
+  <div class="button-container">
+    <button id="startBtn">⏺ Start</button>
+    <button id="stopBtn" disabled>⏹ Stop</button>
+  </div>
+
+  <div id="status">🟡 Waiting...</div>
+
+  <script src="record.js"></script>
+</body>
+
+</html>
