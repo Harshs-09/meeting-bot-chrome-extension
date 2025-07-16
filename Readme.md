@@ -28,35 +28,6 @@ A Chrome extension that records meeting audio (tab + mic), saves the recording l
 
 
 &nbsp;
-## ⚙️ Configuration
-The extension sends audio to your FastAPI backend at: 
-```bash
-http://localhost:9000/file/upload?source=extension
-```
-
-You can change this in the popup.js if needed:
-```js
-const response = await fetch("http://localhost:9000/file/upload?source=extension") 
-```
-If you are sending request to a different backend server make sure to:
-1. Update the frontend code for your response format.
-
-2. Ensure your backend includes the following CORS middleware:
-```python
-from fastapi.middleware.cors import CORSMiddleware
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[
-        "chrome-extension://*",  # Allow all Chrome extensions
-    ],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-```
-
-&nbsp;
 ## 🧪 How to Use
 1. Visit any tab of your choice (eg., Youtube, Google Meet, etc.)
 
