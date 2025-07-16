@@ -85,31 +85,31 @@ startBtn.addEventListener("click", async () => {
       a.click();
       a.remove();
 
-      const formData = new FormData();
-      formData.append("files", blob, "meeting_audio.webm");
-      formData.append("email", email);
+      // const formData = new FormData();
+      // formData.append("files", blob, "meeting_audio.webm");
+      // formData.append("email", email);
 
-      statusDiv.textContent = "⬆️ Uploading...";
-      try {
-        const response = await fetch("http://localhost:9000/file/upload?source=extension", {
-          method: "POST",
-          body: formData
-        });
-        const result = await response.json();
-        if (response.status === 200) {
-          statusDiv.textContent = "✅ All files processed successfully.";
-        } else if (response.status === 207) {
-          statusDiv.textContent = "⚠️ Some files failed during processing. Check console for details.";
-        } else if (response.status === 500) {
-          statusDiv.textContent = "❌ All files failed to process.";
-        } else {
-          statusDiv.textContent = `⚠️ Unexpected status: ${response.status}`;
-        }
-        console.log(result['data']);
-      } catch (err) {
-        statusDiv.textContent = "❌ Upload failed.";
-        console.error(err);
-      }
+      // statusDiv.textContent = "⬆️ Uploading...";
+      // try {
+      //   const response = await fetch("http://localhost:9000/file/upload?source=extension", {
+      //     method: "POST",
+      //     body: formData
+      //   });
+      //   const result = await response.json();
+      //   if (response.status === 200) {
+      //     statusDiv.textContent = "✅ All files processed successfully.";
+      //   } else if (response.status === 207) {
+      //     statusDiv.textContent = "⚠️ Some files failed during processing. Check console for details.";
+      //   } else if (response.status === 500) {
+      //     statusDiv.textContent = "❌ All files failed to process.";
+      //   } else {
+      //     statusDiv.textContent = `⚠️ Unexpected status: ${response.status}`;
+      //   }
+      //   console.log(result['data']);
+      // } catch (err) {
+      //   statusDiv.textContent = "❌ Upload failed.";
+      //   console.error(err);
+      // }
 
       recordedChunks = [];
       isRecording = false;
