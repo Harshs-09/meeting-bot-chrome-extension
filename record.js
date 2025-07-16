@@ -10,20 +10,20 @@ const stopBtn = document.getElementById("stopBtn");
 
 startBtn.addEventListener("click", async () => {
 
-  const emailInput = document.getElementById("email");
-  const email = emailInput.value.trim();
+  // const emailInput = document.getElementById("email");
+  // const email = emailInput.value.trim();
 
-  if (!email) {
-    statusDiv.textContent = "❌ Please enter your email before starting.";
-    emailInput.focus();
-    return;
-  }
+  // if (!email) {
+  //   statusDiv.textContent = "❌ Please enter your email before starting.";
+  //   emailInput.focus();
+  //   return;
+  // }
 
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    statusDiv.textContent = "❌ Please enter a valid email address.";
-    emailInput.focus();
-    return;
-  }
+  // if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+  //   statusDiv.textContent = "❌ Please enter a valid email address.";
+  //   emailInput.focus();
+  //   return;
+  // }
 
   try {
     // Always check microphone access, don't rely solely on chrome.storage.local
