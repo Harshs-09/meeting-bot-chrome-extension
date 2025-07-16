@@ -25,21 +25,3 @@ A Chrome extension that records meeting audio (tab + mic), saves the recording l
 3. Enable Developer mode (top-right toggle).
 4. Click **“Load unpacked”** and select the cloned folder.
 5. The extension should now appear in your Chrome toolbar.
-
-
-&nbsp;
-## 🧪 How to Use
-1. Visit any tab of your choice (eg., Youtube, Google Meet, etc.)
-
-2. Click the extensions icon in your browser.
-3. Select the **Meeting Audio Recorder** extension and click on **"🎬 Open Recorder".**
-4. Enter your email, click **Start** and choose the tab to record.
-5. Once done, click **Stop**. The recording is sent to your backend, and you can save it from the file dialog.
-6. The processed transcript and diarization output will be emailed to the provided email.
-
-&nbsp;
-## 📦 Requirements
-1. A JavaScript-enabled browser.
-
-2. A FastAPI backend with **/upload** endpoint and **CORS enabled**.
-3. Backend must accept **multipart/form-data** for audio uploads.
